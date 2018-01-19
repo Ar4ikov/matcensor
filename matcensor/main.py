@@ -1,6 +1,6 @@
-CensorList = eval(open('mat_off/badlist.json', 'r').read())
+CensorList = eval(open('matcensor/badlist.json', 'r').read())
 CensorList = CensorList['badwords'].split(', ')
-IgnoreList = eval(open('mat_off/ignorelist.json', 'r').read())
+IgnoreList = eval(open('matcensor/ignorelist.json', 'r').read())
 IgnoreList = IgnoreList['ignorelist'].split(', ')
 
 from re import sub as repl
@@ -81,7 +81,7 @@ class MatProtect():
             return {'status': False, 'error': 'Вы не указали ни одной базы/не было указано слова для внесения'}
 
         try:
-            openList = eval(open('mat_off/'+db+'.json').read())
+            openList = eval(open('matcensor/'+db+'.json').read())
         except:
             return {'status': False, 'error': 'Данная база не найдена, достуные: ignorelist, badwords'}
         else:
@@ -91,14 +91,14 @@ class MatProtect():
 
             openList[db] = openList[db] + ", " + word
 
-            closeList = open('mat_off/'+db+'.json', 'w')
+            closeList = open('matcensor/'+db+'.json', 'w')
             closeList.write(str(openList))
             closeList.close()
 
-            CensorList = eval(open('mat_off/badlist.json', 'r').read())
+            CensorList = eval(open('matcensor/badlist.json', 'r').read())
             CensorList = CensorList['badwords'].split(', ')
 
-            IgnoreList = eval(open('mat_off/ignorelist.json', 'r').read())
+            IgnoreList = eval(open('matcensor/ignorelist.json', 'r').read())
             IgnoreList = IgnoreList['ignorelist'].split(', ')
 
             return {'status': True, 'message': 'База данных обновлена и перезагружена!'}
