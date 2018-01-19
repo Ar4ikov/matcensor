@@ -1,4 +1,4 @@
-import mat_off
+import matcensor
 
 '''
     Тест модуля #1.
@@ -12,7 +12,7 @@ import mat_off
 '''
 
 # Объявляем главный класс модуля
-mats = mat_off.MatProtect()
+mats = matcensor.MatProtect()
 
 # Строка с "плохими словами"
 string = 'Я еб*л твою мамашу!'
