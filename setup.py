@@ -5,7 +5,7 @@ setup(
     name='matcensor',
     version=matcensor.main.__version__,
     packages=['matcensor'],
-    url='https://github.com/Ar4ikov/matcensore',
+    url='https://github.com/Ar4ikov/matcensor',
     license='Apache 2.0',
     author='Nikita Archikov',
     author_email='bizy18588@gmail.com',
